@@ -128,7 +128,7 @@ TW_EXTRA_LANGUAGES := true
 TW_USE_MODEL_HARDWARE_ID_FOR_DEVICE_ID := true
 PRODUCT_ENFORCE_VINTF_MANIFEST := true
 TW_USE_LEGACY_BATTERY_SERVICES := true
-TW_LOAD_VENDOR_MODULES := $(shell echo \"$(shell ls $(DEVICE_PATH)/recovery/root/lib/modules)/")
+TW_LOAD_VENDOR_MODULES := $(shell echo \"$(shell ls $(DEVICE_PATH)/recovery/root/lib/modules)\")
 
 # Samsung
 TW_NO_REBOOT_BOOTLOADER := true
