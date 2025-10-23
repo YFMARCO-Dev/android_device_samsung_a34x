@@ -1,12 +1,12 @@
 # Logical
-/system             emmc      system                                flags=display="System";logical
-/vendor             emmc     vendor                                flags=display="Vendor";logical
-/product            emmc     product                               flags=display="Product";logical
-/odm                emmc     odm                                   flags=display="odm";logical
-/system_ext         erofs     system_ext                            flags=display="system_ext";logical
-/vendor_dlkm        erofs     vendor_dlkm                           flags=display="vendor_dlkm";logical
-/system_dlkm        ext4      system_dlkm                           flags=display="system_dlkm";logical
-/odm_dlkm           erofs     odm_dlkm                              flags=display="odm_dlkm";logical
+#/system             emmc      system                                flags=display="System";logical
+#/vendor             emmc     vendor                                flags=display="Vendor";logical
+#/product            emmc     product                               flags=display="Product";logical
+#/odm                emmc     odm                                   flags=display="odm";logical
+#/system_ext         erofs     system_ext                            flags=display="system_ext";logical
+#/vendor_dlkm        erofs     vendor_dlkm                           flags=display="vendor_dlkm";logical
+#/system_dlkm        ext4      system_dlkm                           flags=display="system_dlkm";logical
+#/odm_dlkm           erofs     odm_dlkm                              flags=display="odm_dlkm";logical
 
 # Other
 /boot               emmc      /dev/block/by-name/boot               flags=display="Boot";flasimg=1;backup=1
@@ -18,8 +18,8 @@
 /metadata           ext4      /dev/block/by-name/metadata           flags=display="metadata";backup=1
 /modem              emmc      /dev/block/by-name/apnhlos            flags=display="modem";backup=1
 /dtbo               emmc      /dev/block/by-name/dtbo               flags=display="dtbo";flashimg=1;backup=1
-/keydata            ext4      /dev/block/by-name/keydata            flags=display="keydata";backup=1
-/keyrefuge          f2fs      /dev/block/by-name/keyrefuge          flags=display="keyrefuge"backup=1
+#/keydata            ext4      /dev/block/by-name/keydata            flags=display="keydata";backup=1
+#/keyrefuge          f2fs      /dev/block/by-name/keyrefuge          flags=display="keyrefuge"backup=1
 /optics             ext4      /dev/block/by-name/optics             flags=display="optics";backup=1
 /prism              ext4      /dev/block/by-name/prism              flags=display="prism";backup=1
 /vbmeta_samsung     emmc      /dev/block/by-name/vbmeta_samsung     flags=display="vbmeta_samsung"flashimg=1;backup=1
