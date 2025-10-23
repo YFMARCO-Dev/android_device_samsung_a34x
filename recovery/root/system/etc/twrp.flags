@@ -1,7 +1,7 @@
 # Logical
-#/system             emmc      system                                flags=display="System";logical
-#/vendor             emmc     vendor                                flags=display="Vendor";logical
-#/product            emmc     product                               flags=display="Product";logical
+/system             emmc      system                                flags=display="System_Image";logical;flashimg=1;backup=1
+/vendor             emmc     vendor                                flags=display="Vendor_Image";logical;flashimg=1;backup=1
+/product            emmc     product                               flags=display="Product_Image";logical;flashimg=1;backup=1
 #/odm                emmc     odm                                   flags=display="odm";logical
 #/system_ext         erofs     system_ext                            flags=display="system_ext";logical
 #/vendor_dlkm        erofs     vendor_dlkm                           flags=display="vendor_dlkm";logical
