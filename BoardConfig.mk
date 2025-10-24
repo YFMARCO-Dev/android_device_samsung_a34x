@@ -156,7 +156,7 @@ TWRP_EVENT_LOGGING := true
 # USB
 TW_EXCLUDE_DEFAULT_USB_INIT := true
 TW_USE_NEW_MINADBD := true
-TARGET_USE_CUSTOM_LUN_FILE_PATH := /sys/class/android_usb/android0/f_mass_storage/lun/file
+#TARGET_USE_CUSTOM_LUN_FILE_PATH := /sys/class/android_usb/android0/f_mass_storage/lun/file
 
 # Skyhawk Recovery - ONLY FOR SKYHAWK RECOVERY PROJECT BUILDING
 SHRP_DARK := true
