@@ -1,12 +1,14 @@
 # Logical
-/system_image             emmc      system                                flags=display="System_Image";logical;flashimg=1;backup=1
-/vendor_image             emmc     vendor                                flags=display="Vendor_Image";logical;flashimg=1;backup=1
-/product_image            emmc     product                               flags=display="Product_Image";logical;flashimg=1;backup=1
-#/odm                emmc     odm                                   flags=display="odm";logical
-/system_ext_image         erofs     system_ext                            flags=display="System_ext_Image";logical;flashimg=1;backup=1
-#/vendor_dlkm        erofs     vendor_dlkm                           flags=display="vendor_dlkm";logical
-#/system_dlkm        ext4      system_dlkm                           flags=display="system_dlkm";logical
-#/odm_dlkm           erofs     odm_dlkm                              flags=display="odm_dlkm";logical
+/system         f2fs                /dev/block/mapper/system                                    flags=backup=1;display="System-f2fs";logical;
+/system         ext4                /dev/block/mapper/system                                    flags=backup=1;display="System-ext4";logical;
+/system         erofs               /dev/block/mapper/system                                    flags=backup=1;display="System-erofs";logical;
+/system_image   emmc                /dev/block/mapper/system                                    flags=backup=1;display="System Image";flashimg=1;wipeingui;
+/vendor         erofs                /dev/block/mapper/vendor                                    flags=backup=1;display="Vendor";logical;
+/vendor_image   emmc                /dev/block/mapper/vendor                                    flags=backup=1;display="Vendor Image";flashimg=1;wipeingui;
+/odm            erofs                /dev/block/mapper/odm                                       flags=backup=1;display="ODM";logical;
+/odm_image      emmc                /dev/block/mapper/odm                                       flags=backup=1;display="ODM Image";flashimg=1;wipeingui;
+/product        erofs                /dev/block/mapper/product                                   flags=backup=1;display="Product";logical
+/product_image  emmc                /dev/block/mapper/product                                   flags=backup=1;display="Product Image";flashimg=1;wipeingui;
 
 # Other
 /boot               emmc      /dev/block/by-name/boot               flags=display="Boot";flashimg=1;backup=1
