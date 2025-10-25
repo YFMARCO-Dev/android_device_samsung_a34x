@@ -188,6 +188,6 @@
         <fqname>@1.0::ISehTlcPayment/default</fqname>
     </hal>
     <sepolicy>
-        <version>202404</version>
+        <version>35</version>
     </sepolicy>
 </manifest>
