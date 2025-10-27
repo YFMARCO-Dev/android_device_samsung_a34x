@@ -2,13 +2,13 @@
 /system         f2fs                /dev/block/mapper/system                                    flags=backup=1;display="System-f2fs";logical;
 /system         ext4                /dev/block/mapper/system                                    flags=backup=1;display="System-ext4";logical;
 /system         erofs               /dev/block/mapper/system                                    flags=backup=1;display="System-erofs";logical;
-/system_image   emmc                /dev/block/mapper/system                                    flags=backup=1;display="System Image";flashimg=1;wipeingui;
+/system_image   emmc                /dev/block/mapper/system                                    flags=backup=1;display="System Image";flashimg=1
 /vendor         erofs                /dev/block/mapper/vendor                                    flags=backup=1;display="Vendor";logical;
-/vendor_image   emmc                /dev/block/mapper/vendor                                    flags=backup=1;display="Vendor Image";flashimg=1;wipeingui;
+/vendor_image   emmc                /dev/block/mapper/vendor                                    flags=backup=1;display="Vendor Image";flashimg=1;
 /odm            erofs                /dev/block/mapper/odm                                       flags=backup=1;display="ODM";logical;
-/odm_image      emmc                /dev/block/mapper/odm                                       flags=backup=1;display="ODM Image";flashimg=1;wipeingui;
+/odm_image      emmc                /dev/block/mapper/odm                                       flags=backup=1;display="ODM Image";flashimg=1;
 /product        erofs                /dev/block/mapper/product                                   flags=backup=1;display="Product";logical
-/product_image  emmc                /dev/block/mapper/product                                   flags=backup=1;display="Product Image";flashimg=1;wipeingui;
+/product_image  emmc                /dev/block/mapper/product                                   flags=backup=1;display="Product Image";flashimg=1;
 
 # Other
 /boot               emmc      /dev/block/by-name/boot               flags=display="Boot";flashimg=1;backup=1
