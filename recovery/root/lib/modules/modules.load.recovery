@@ -154,7 +154,6 @@ rt_pd_manager.ko
 extcon-mtk-usb.ko
 tcpci_late_sync.ko
 fusb304.ko
-ps5169.ko
 usb_meta.ko
 mtk_pd_charging.ko
 mtk_charger_framework.ko
@@ -195,11 +194,9 @@ sec_input_notifier.ko
 fingerprint.ko
 fingerprint_sysfs.ko
 sec_mm.ko
-sec_mm.ko
 vibrator_vib_info.ko
 sec_vibrator.ko
 isa1000_vibrator.ko
 usb_f_conn_gadget.ko
 usb_f_dm.ko
 usb_f_ss_mon_gadget.ko
-sec_wakeup_cpu_allocator.ko
