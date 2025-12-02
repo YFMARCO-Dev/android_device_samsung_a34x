@@ -15,16 +15,19 @@
       "GID": "system"
     },
     {
-      "Controller": "cpuacct",
-      "Path": "/dev/acct",
-      "Mode": "0555"
-    },
-    {
       "Controller": "cpuset",
       "Path": "/dev/cpuset",
       "Mode": "0755",
       "UID": "system",
       "GID": "system"
+    },
+    {
+      "Controller": "memory",
+      "Path": "/dev/memcg",
+      "Mode": "0700",
+      "UID": "root",
+      "GID": "system",
+      "Optional": true
     },
     {
       "Controller": "sfreezer",
@@ -43,13 +46,6 @@
       {
         "Controller": "freezer",
         "Path": "."
-      },
-      {
-        "Controller": "memory",
-        "Path": ".",
-        "NeedsActivation": true,
-        "MaxActivationDepth": 0,
-        "Optional": true
       }
     ]
   }

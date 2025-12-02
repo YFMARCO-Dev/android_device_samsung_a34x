@@ -72,7 +72,7 @@ mka recoveryimage
 #
 ```
 
-## Contributors
- - [Fede2782](https://github.com/Fede2782)
+## Huge thanks to
  - [SavedByLight](https://github.com/SavedByLight)
+ - [Fede2782](https://github.com/Fede2782)
  - [ChrolloUTA](https://github.com/ChrolloUTA)

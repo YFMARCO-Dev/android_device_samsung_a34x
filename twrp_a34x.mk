@@ -1,45 +1,35 @@
 #
 # Copyright (C) 2025 The Android Open Source Project
-# Copyright (C) 2025 The TWRP Open Source Project
+# Copyright (C) 2025 SebaUbuntu's TWRP device tree generator
 #
 # SPDX-License-Identifier: Apache-2.0
 #
 
-# Only the below variable(s) need to be changed!
-#
-# Define hardware platform
-PRODUCT_PLATFORM := mt6877
-
-# The below variables will be generated automatically
-#
-# Release name (automatically taken from this file's suffix)
-PRODUCT_RELEASE_NAME := $(lastword $(subst /, ,$(lastword $(subst _, ,$(firstword $(subst ., ,$(MAKEFILE_LIST)))))))
-
-# Custom vendor used in build tree (automatically taken from this file's prefix)
-CUSTOM_VENDOR := $(lastword $(subst /, ,$(firstword $(subst _, ,$(firstword $(MAKEFILE_LIST))))))
-
-# Inherit from common AOSP config
+# Inherit from those products. Most specific first.
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
+
+# Inherit some common twrp stuff.
+$(call inherit-product-if-exists, vendor/twrp/config/common.mk)
+
+# Inherit some common pbrp stuff.
+$(call inherit-product-if-exists, vendor/pb/config/common.mk)
 
 # Enable project quotas and casefolding for emulated storage without sdcardfs
 $(call inherit-product, $(SRC_TARGET_DIR)/product/emulated_storage.mk)
 
-# Inherit from our custom product configuration
-$(call inherit-product, vendor/$(CUSTOM_VENDOR)/config/common.mk)
+# Inherit from a34x device
+$(call inherit-product, device/samsung/a34x/device.mk)
 
-# OEM Info (automatically taken from device tree path)
-BOARD_VENDOR := $(or $(word 2,$(subst /, ,$(firstword $(MAKEFILE_LIST)))),$(value 2))
+PRODUCT_DEVICE := a34x
+PRODUCT_NAME := twrp_a34x
+PRODUCT_BRAND := samsung
+PRODUCT_MODEL := SM-A346E
+PRODUCT_MANUFACTURER := samsung
 
-## Device identifier. This must come after all inclusions
-PRODUCT_DEVICE := $(PRODUCT_RELEASE_NAME)
-PRODUCT_NAME := $(CUSTOM_VENDOR)_$(PRODUCT_DEVICE)
-PRODUCT_BRAND := $(BOARD_VENDOR)
-PRODUCT_MODEL := $(shell echo $(PRODUCT_BRAND) | tr  '[:lower:]' '[:upper:]')_$(PRODUCT_DEVICE)
-PRODUCT_MANUFACTURER := $(PRODUCT_BRAND)
+PRODUCT_GMS_CLIENTID_BASE := android-samsung
 
-# Default device path for tree
-DEVICE_PATH := device/$(PRODUCT_BRAND)/$(PRODUCT_DEVICE)
+PRODUCT_BUILD_PROP_OVERRIDES += \
+    PRIVATE_BUILD_DESC="a34xdxx-user 15 AP3A.240905.015.A2 A346EXXSADYG1 release-keys"
 
-# Inherit from hardware-specific part of the product configuration
-$(call inherit-product, device/$(PRODUCT_BRAND)/$(PRODUCT_DEVICE)/device.mk)
+BUILD_FINGERPRINT := samsung/a34xdxx/a34x:15/AP3A.240905.015.A2/A346EXXSADYG1:user/release-keys
