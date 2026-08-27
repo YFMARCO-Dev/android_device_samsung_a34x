@@ -34,6 +34,9 @@ TARGET_NO_RADIOIMAGE := true
 TARGET_USES_UEFI := true
 TARGET_BOARD_PLATFORM := $(TARGET_SOC)
 
+# Define hardware platform
+PRODUCT_PLATFORM := mt6877
+
 # Kernel
 BOARD_CUSTOM_BOOTIMG_MK := $(DEVICE_PATH)/mkbootimg.mk
 
