@@ -12,6 +12,16 @@ PRODUCT_USE_DYNAMIC_PARTITIONS := true
 
 PRODUCT_SHIPPING_API_LEVEL := 30
 
+# Keymaster
+PRODUCT_PACKAGES += \
+    android.hardware.keymaster@4.1
+
+# Security
+PRODUCT_PACKAGES += \
+    android.hardware.security.keymint \
+    android.hardware.security.secureclock \
+    android.hardware.security.sharedsecret
+
 # Health
 PRODUCT_PACKAGES += \
     android.hardware.health@2.1-impl \
