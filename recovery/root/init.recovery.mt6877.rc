@@ -5,6 +5,10 @@ on init
     setprop sys.usb.ffs.aio_compat 1
     start health-hal-2-1
 
+on boot
+    wait /sys/class/usb_notify/usb_control/usb_sl 5
+    write /sys/class/usb_notify/usb_control/usb_sl 0
+
 on fs && property:ro.debuggable=0
     # distinguish USB shoulde connect or not, i.e. CDP vs SDP
     write /sys/class/udc/musb-hdrc/device/cmode 2
